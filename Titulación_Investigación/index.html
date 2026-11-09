@@ -5,14 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Proyecto de Apoyo a la Docencia: Sostenibilidad - Perspectivas multidisciplinarias para la solución de problemas socioambientales.">
   <title>Sostenibilidad: Perspectivas Multidisciplinarias | UNAM</title>
-  
-  <!-- Fuentes e Iconos -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Estilos nuevos SOLO para el buscador y las flechas. Reutilizan tus variables. -->
+  <style>
+    .subject-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .subject-search {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+    }
+    .subject-search i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94A3B8;
+    }
+    .subject-search input {
+      width: 100%;
+      padding: 0.8rem 1rem 0.8rem 2.6rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+    }
+    .subject-search input::placeholder { color: #94A3B8; }
+    .subject-search input:focus {
+      outline: none;
+      border-color: var(--green-eco);
+      background: rgba(255,255,255,0.08);
+    }
+    .subject-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .arrow-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #FFFFFF;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .arrow-btn:hover:not(:disabled) {
+      background: var(--green-eco);
+      transform: translateY(-2px);
+    }
+    .arrow-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    .subject-counter {
+      color: #94A3B8;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      min-width: 60px;
+      text-align: center;
+    }
+    .theme-title {
+      font-family: var(--font-heading);
+      color: var(--accent-gold);
+      font-size: 1.3rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .empty-msg {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #94A3B8;
+      padding: 2rem 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -28,14 +113,13 @@
     <nav>
       <ul class="nav-links">
         <li><a href="#inicio" class="active">Inicio</a></li>
-        <li><a href="#modulos">Asignaturas</a></li>
-        <li><a href="#proyeccion">Escalabilidad</a></li>
+        <li><a href="#proyeccion">Asignaturas</a></li>
         <li><a href="#acerca">Créditos</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="inicio" class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -43,151 +127,45 @@
       <h1>Sostenibilidad: Perspectivas Multidisciplinarias para la Solución de Problemas Socioambientales</h1>
       <p>Plataforma educativa interactiva diseñada para la integración de conocimientos económico-administrativos y de desarrollo sostenible.</p>
       <div class="hero-buttons">
-        <a href="#modulos" class="btn btn-primary">Explorar Contenidos</a>
-        <a href="#proyeccion" class="btn btn-secondary">Plan de Escalabilidad</a>
+        <a href="#proyeccion" class="btn btn-primary">Explorar Contenidos</a>
       </div>
     </div>
   </section>
 
-  <!-- Módulos Actuales -->
-  <main id="modulos" class="container">
-    <div class="section-header">
-      <h2>Núcleo Temático Actual</h2>
-      <p>Selecciona una asignatura para consultar su contenido interactivo</p>
-    </div>
-
-    <!-- Navegación de Pestañas -->
-    <div class="tabs-wrapper">
-      <div class="tabs-header" role="tablist">
-        <button class="tab-btn active" data-tab="plan-negocios"><i class="fa-solid fa-chart-line"></i> Plan de Negocios</button>
-        <button class="tab-btn" data-tab="contabilidad"><i class="fa-solid fa-calculator"></i> Contabilidad Básica</button>
-        <button class="tab-btn" data-tab="textos-admin"><i class="fa-solid fa-file-signature"></i> Análisis de Textos Admin.</button>
-        <button class="tab-btn" data-tab="economia"><i class="fa-solid fa-globe"></i> Economía General</button>
-        <button class="tab-btn" data-tab="imagen-sociedad"><i class="fa-solid fa-users"></i> Imagen y Sociedad</button>
-      </div>
-
-      <!-- Paneles de Contenido -->
-      <div class="tabs-content">
-        <!-- Tab 1 -->
-        <article id="plan-negocios" class="tab-panel active">
-          <div class="panel-banner">
-            <h3>Plan de Negocios Sostenible</h3>
-            <p>Estructuración de modelos de negocio con impacto socioambiental positivo.</p>
-          </div>
-          <div class="panel-body">
-            <div class="card-grid">
-              <div class="info-card">
-                <h4><i class="fa-solid fa-bullseye"></i> Metodología Canvas Sostenible</h4>
-                <p>Aquí se integrarán las lecturas y ejercicios para diseñar modelos de negocio enfocados en economía circular.</p>
-              </div>
-              <div class="info-card">
-                <h4><i class="fa-solid fa-folder-open"></i> Recursos Didácticos</h4>
-                <p>Espacio reservado para descargas de plantillas, guías académicas y casos de estudio evaluativos.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tab 2 -->
-        <article id="contabilidad" class="tab-panel">
-          <div class="panel-banner">
-            <h3>Contabilidad Básica</h3>
-            <p>Fundamentos financieros para la gestión de recursos en proyectos sustentables.</p>
-          </div>
-          <div class="panel-body">
-            <div class="card-grid">
-              <div class="info-card">
-                <h4><i class="fa-solid fa-book"></i> Estados Financieros</h4>
-                <p>Módulos explicativos sobre balance general, estado de resultados y flujos de efectivo con balance verde.</p>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Tab 3 -->
-        <article id="textos-admin" class="tab-panel">
-          <div class="panel-banner">
-            <h3>Lectura y Análisis de Textos Administrativos</h3>
-            <p>Comprensión crítica e interpretación de documentación técnica y directiva.</p>
-          </div>
-          <div class="panel-body">
-            <p>Contenido en fase de estructuración docente.</p>
-          </div>
-        </article>
-
-        <!-- Tab 4 -->
-        <article id="economia" class="tab-panel">
-          <div class="panel-banner">
-            <h3>Economía General</h3>
-            <p>Principios económicos esenciales y su relación con el entorno social.</p>
-          </div>
-          <div class="panel-body">
-            <p>Contenido en fase de estructuración docente.</p>
-          </div>
-        </article>
-
-        <!-- Tab 5 -->
-        <article id="imagen-sociedad" class="tab-panel">
-          <div class="panel-banner">
-            <h3>Imagen y Sociedad</h3>
-            <p>Comunicación estratégica y responsabilidad social corporativa.</p>
-          </div>
-          <div class="panel-body">
-            <p>Contenido en fase de estructuración docente.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </main>
-
-  <!-- Módulo de Escalabilidad (Próximas Asignaturas) -->
+  <!-- Núcleo Temático + Escalabilidad (unificado) -->
   <section id="proyeccion" class="scalability-section">
     <div class="container">
       <div class="section-header text-light">
-        <h2>Fase de Escalabilidad</h2>
-        <p>Próximas asignaturas preparadas para ser integradas por futuras administraciones del proyecto</p>
+        <h2>Núcleo Temático y Escalabilidad</h2>
+        <p>Asignaturas organizadas por tema · Navega con el buscador o con las flechas</p>
       </div>
 
-      <div class="roadmap-grid">
-        <div class="roadmap-card">
-          <span class="status-badge">Próximamente</span>
-          <i class="fa-solid fa-chart-pie card-icon"></i>
-          <h3>Microeconomía</h3>
-          <p>Análisis del comportamiento de agentes individuales y asignación de recursos.</p>
+      <!-- Barra de búsqueda + Navegador de flechas -->
+      <div class="subject-toolbar">
+        <div class="subject-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="subjectSearch" placeholder="Buscar asignatura o tema...">
         </div>
-
-        <div class="roadmap-card">
-          <span class="status-badge">Próximamente</span>
-          <i class="fa-solid fa-landmark card-icon"></i>
-          <h3>Macroeconomía</h3>
-          <p>Estudio de agregados económicos globales y políticas públicas socioambientales.</p>
-        </div>
-
-        <div class="roadmap-card">
-          <span class="status-badge">Próximamente</span>
-          <i class="fa-solid fa-map-location-dot card-icon"></i>
-          <h3>Análisis Socioeconómico de México</h3>
-          <p>Evaluación del desarrollo histórico y estructural de la economía nacional.</p>
-        </div>
-
-        <div class="roadmap-card highlight">
-          <span class="status-badge active">Prioridad 1</span>
-          <i class="fa-solid fa-leaf card-icon"></i>
-          <h3>Introducción al Desarrollo Sostenible</h3>
-          <p>Marco conceptual de los ODS y sustentabilidad multidisciplinaria.</p>
-        </div>
-
-        <div class="roadmap-card">
-          <span class="status-badge">Próximamente</span>
-          <i class="fa-solid fa-earth-americas card-icon"></i>
-          <h3>Economía y Globalización</h3>
-          <p>Mercados internacionales y sus impactos en el equilibrio ambiental local.</p>
+        <div class="subject-nav">
+          <button class="arrow-btn" id="prevSubject" aria-label="Anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <span id="subjectCounter" class="subject-counter">1 / 4</span>
+          <button class="arrow-btn" id="nextSubject" aria-label="Siguiente">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
       </div>
+
+      <!-- Título del tema actual (o "Resultados de búsqueda") -->
+      <h3 id="currentThemeTitle" class="theme-title">Finanzas y Modelos de Negocio</h3>
+
+      <!-- Grid de tarjetas -->
+      <div id="subjectGrid" class="roadmap-grid"></div>
     </div>
   </section>
 
-  <!-- Acerca de / Créditos -->
+  <!-- Footer -->
   <footer id="acerca" class="footer">
     <div class="container footer-content">
       <div class="footer-info">
@@ -204,22 +182,137 @@
     </div>
   </footer>
 
-  <!-- Lógica de Pestañas (Inline para facilidad de pruebas) -->
+  <!-- Lógica de búsqueda + navegación por flechas -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      const tabPanels = document.querySelectorAll('.tab-panel');
+      const themes = [
+        {
+          name: "Finanzas y Modelos de Negocio",
+          subjects: [
+            { title: "Plan de Negocios Sostenible", desc: "Estructuración de modelos de negocio con impacto socioambiental positivo.", icon: "fa-chart-line", status: "active" },
+            { title: "Contabilidad Básica", desc: "Fundamentos financieros para la gestión de recursos en proyectos sustentables.", icon: "fa-calculator", status: "active" },
+            { title: "Microeconomía", desc: "Análisis del comportamiento de agentes individuales y asignación de recursos.", icon: "fa-chart-pie", status: "soon" },
+            { title: "Macroeconomía", desc: "Estudio de agregados económicos globales y políticas públicas socioambientales.", icon: "fa-landmark", status: "soon" }
+          ]
+        },
+        {
+          name: "Análisis Económico",
+          subjects: [
+            { title: "Economía General", desc: "Principios económicos esenciales y su relación con el entorno social.", icon: "fa-globe", status: "active" },
+            { title: "Análisis Socioeconómico de México", desc: "Evaluación del desarrollo histórico y estructural de la economía nacional.", icon: "fa-map-location-dot", status: "soon" },
+            { title: "Economía y Globalización", desc: "Mercados internacionales y sus impactos en el equilibrio ambiental local.", icon: "fa-earth-americas", status: "soon" }
+          ]
+        },
+        {
+          name: "Desarrollo Sostenible",
+          subjects: [
+            { title: "Introducción al Desarrollo Sostenible", desc: "Marco conceptual de los ODS y sustentabilidad multidisciplinaria.", icon: "fa-leaf", status: "priority" }
+          ]
+        },
+        {
+          name: "Comunicación y Sociedad",
+          subjects: [
+            { title: "Análisis de Textos Administrativos", desc: "Comprensión crítica e interpretación de documentación técnica y directiva.", icon: "fa-file-signature", status: "active" },
+            { title: "Imagen y Sociedad", desc: "Comunicación estratégica y responsabilidad social corporativa.", icon: "fa-users", status: "active" }
+          ]
+        }
+      ];
 
-      tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          tabBtns.forEach(b => b.classList.remove('active'));
-          tabPanels.forEach(p => p.classList.remove('active'));
+      const grid = document.getElementById('subjectGrid');
+      const counter = document.getElementById('subjectCounter');
+      const themeTitle = document.getElementById('currentThemeTitle');
+      const prevBtn = document.getElementById('prevSubject');
+      const nextBtn = document.getElementById('nextSubject');
+      const searchInput = document.getElementById('subjectSearch');
 
-          btn.classList.add('active');
-          const tabId = btn.getAttribute('data-tab');
-          document.getElementById(tabId).classList.add('active');
-        });
+      const SEARCH_PAGE_SIZE = 6;
+      let currentThemeIndex = 0;
+      let searchQuery = '';
+      let searchPage = 0;
+
+      const normalize = (str) =>
+        str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+      const allSubjects = () =>
+        themes.flatMap(t => t.subjects.map(s => ({ ...s, theme: t.name })));
+
+      const filteredSubjects = () => {
+        if (!searchQuery) return null;
+        const q = normalize(searchQuery);
+        return allSubjects().filter(s =>
+          normalize(s.title).includes(q) ||
+          normalize(s.desc).includes(q) ||
+          normalize(s.theme).includes(q)
+        );
+      };
+
+      const cardHTML = (s) => {
+        const isPriority = s.status === 'priority';
+        const isActive = s.status === 'active';
+        const badgeClass = (isPriority || isActive) ? 'active' : '';
+        const badgeText = isPriority ? 'Prioridad 1' : (isActive ? 'Disponible' : 'Próximamente');
+        return `
+          <div class="roadmap-card ${isPriority ? 'highlight' : ''}">
+            <span class="status-badge ${badgeClass}">${badgeText}</span>
+            <i class="fa-solid ${s.icon} card-icon"></i>
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+          </div>
+        `;
+      };
+
+      const render = () => {
+        const filtered = filteredSubjects();
+
+        if (filtered) {
+          if (filtered.length === 0) {
+            themeTitle.textContent = 'Sin resultados';
+            grid.innerHTML = '<p class="empty-msg">No se encontraron asignaturas que coincidan con tu búsqueda.</p>';
+            counter.textContent = '0 / 0';
+            prevBtn.disabled = true;
+            nextBtn.disabled = true;
+            return;
+          }
+
+          const totalPages = Math.ceil(filtered.length / SEARCH_PAGE_SIZE);
+          if (searchPage >= totalPages) searchPage = totalPages - 1;
+          if (searchPage < 0) searchPage = 0;
+
+          const start = searchPage * SEARCH_PAGE_SIZE;
+          const pageItems = filtered.slice(start, start + SEARCH_PAGE_SIZE);
+
+          themeTitle.textContent = `Resultados de búsqueda (${filtered.length})`;
+          grid.innerHTML = pageItems.map(cardHTML).join('');
+          counter.textContent = `${searchPage + 1} / ${totalPages}`;
+          prevBtn.disabled = searchPage === 0;
+          nextBtn.disabled = searchPage >= totalPages - 1;
+        } else {
+          const theme = themes[currentThemeIndex];
+          themeTitle.textContent = theme.name;
+          grid.innerHTML = theme.subjects.map(cardHTML).join('');
+          counter.textContent = `${currentThemeIndex + 1} / ${themes.length}`;
+          prevBtn.disabled = currentThemeIndex === 0;
+          nextBtn.disabled = currentThemeIndex >= themes.length - 1;
+        }
+      };
+
+      prevBtn.addEventListener('click', () => {
+        if (searchQuery) { searchPage--; } else { currentThemeIndex--; }
+        render();
       });
+
+      nextBtn.addEventListener('click', () => {
+        if (searchQuery) { searchPage++; } else { currentThemeIndex++; }
+        render();
+      });
+
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        searchPage = 0;
+        render();
+      });
+
+      render();
     });
   </script>
 </body>
