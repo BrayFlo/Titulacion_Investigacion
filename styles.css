@@ -1,4 +1,6 @@
-/* --- VARIABLES GLOBALES (Paleta Educativa y Sustentable) --- */
+/* ==========================================================================
+   1. VARIABLES GLOBALES (Identidad UNAM + Sostenibilidad)
+   ========================================================================== */
 :root {
   --primary-color: #002B49;     /* Azul Institucional UNAM */
   --accent-gold: #D4AF37;       /* Oro UNAM */
@@ -9,15 +11,17 @@
   --text-muted: #64748B;
   --white: #FFFFFF;
   --border-color: #E2E8F0;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Open Sans', sans-serif;
   --radius: 12px;
 }
 
-/* --- RESET BÁSICO --- */
+/* ==========================================================================
+   2. RESET BÁSICO Y ESTRUCTURA GLOBAL
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -29,15 +33,21 @@ body {
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
+  width: 100%;
 }
 
-/* --- NAVBAR --- */
+/* ==========================================================================
+   3. NAVBAR NAVEGACIÓN
+   ========================================================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -55,6 +65,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-decoration: none;
+  color: var(--white);
 }
 
 .unam-badge {
@@ -81,21 +93,29 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .nav-links a {
   color: var(--white);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 0.95rem;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--accent-gold);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* --- HERO SECTION --- */
+/* ==========================================================================
+   4. HERO SECTIONS (INICIO Y ASIGNATURAS)
+   ========================================================================== */
+/* Hero Principal (index.html) */
 .hero {
   position: relative;
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--green-dark) 100%);
@@ -151,132 +171,164 @@ body {
   color: var(--white);
 }
 
-.btn-secondary {
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-}
-
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-/* --- TABS SYSTEM --- */
-.section-header {
+/* Hero de Páginas de Asignaturas Individuales */
+.subject-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--green-dark) 100%);
+  color: var(--white);
+  padding: 3.5rem 1.5rem;
   text-align: center;
-  margin-bottom: 2.5rem;
 }
 
-.section-header h2 {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  color: var(--primary-color);
-}
-
-.tabs-wrapper {
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-}
-
-.tabs-header {
-  display: flex;
-  background: #F1F5F9;
-  border-bottom: 1px solid var(--border-color);
-  overflow-x: auto;
-}
-
-.tab-btn {
-  flex: 1;
-  padding: 1.2rem 1rem;
-  border: none;
-  background: none;
-  font-family: var(--font-heading);
+.subject-hero .badge {
+  background-color: rgba(212, 175, 55, 0.2);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.3s;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.tab-btn:hover {
-  background: #E2E8F0;
-  color: var(--primary-color);
-}
-
-.tab-btn.active {
-  background: var(--white);
-  color: var(--green-dark);
-  border-bottom: 3px solid var(--green-eco);
-}
-
-.tab-panel {
-  display: none;
-  padding: 2rem;
-}
-
-.tab-panel.active {
-  display: block;
-}
-
-.panel-banner {
-  background: linear-gradient(90deg, #ECFDF5 0%, #F0FDF4 100%);
-  border-left: 4px solid var(--green-eco);
-  padding: 1.5rem;
-  border-radius: 6px;
-  margin-bottom: 2rem;
-}
-
-.panel-banner h3 {
+.subject-hero h1 {
   font-family: var(--font-heading);
-  color: var(--green-dark);
-  font-size: 1.4rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 1rem 0 0.5rem;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+.subject-hero p {
+  font-size: 1.1rem;
+  color: #E2E8F0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.info-card {
-  padding: 1.5rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--white);
-}
-
-.info-card h4 {
-  font-family: var(--font-heading);
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-}
-
-/* --- ESCALABILIDAD (ROADMAP) --- */
+/* ==========================================================================
+   5. CATALOGO INTERACTIVO Y BUSCADOR (index.html)
+   ========================================================================== */
 .scalability-section {
   background-color: var(--primary-color);
   color: var(--white);
   padding: 4rem 0;
 }
 
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
 .text-light h2 {
   color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 2rem;
 }
 
 .text-light p {
   color: #94A3B8;
 }
 
+/* Toolbar de búsqueda y flechas */
+.subject-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.subject-search {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+}
+
+.subject-search i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94A3B8;
+}
+
+.subject-search input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.subject-search input::placeholder {
+  color: #94A3B8;
+}
+
+.subject-search input:focus {
+  outline: none;
+  border-color: var(--green-eco);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.subject-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.arrow-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.arrow-btn:hover:not(:disabled) {
+  background: var(--green-eco);
+  transform: translateY(-2px);
+}
+
+.arrow-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.subject-counter {
+  color: #94A3B8;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+.theme-title {
+  font-family: var(--font-heading);
+  color: var(--accent-gold);
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* Grid y Tarjetas del Roadmap */
 .roadmap-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
@@ -286,12 +338,33 @@ body {
   padding: 1.8rem 1.2rem;
   border-radius: var(--radius);
   position: relative;
-  transition: transform 0.3s;
+  transition: transform 0.3s, background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
-.roadmap-card:hover {
+/* Tarjetas interactivas (Enlaces a asignaturas activas) */
+a.roadmap-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
+
+a.roadmap-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.1);
+  border-color: var(--green-eco);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+}
+
+/* Tarjetas inactivas (Próximamente / En desarrollo) */
+.roadmap-card.disabled {
+  cursor: default;
+}
+
+.roadmap-card.disabled:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .roadmap-card.highlight {
@@ -305,6 +378,8 @@ body {
   border-radius: 12px;
   background: #334155;
   color: #94A3B8;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .status-badge.active {
@@ -316,7 +391,7 @@ body {
 .card-icon {
   font-size: 2rem;
   color: var(--green-eco);
-  margin: 1rem 0;
+  margin: 0.8rem 0;
   display: block;
 }
 
@@ -324,15 +399,192 @@ body {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  color: var(--white);
 }
 
 .roadmap-card p {
   font-size: 0.85rem;
   color: #94A3B8;
+  line-height: 1.4;
 }
 
-/* --- FOOTER --- */
+.empty-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #94A3B8;
+  padding: 2rem 0;
+}
+
+/* ==========================================================================
+   6. LAYOUT INTERNO DE CADA ASIGNATURA (PÁGINAS INDIVIDUALES)
+   ========================================================================== */
+.subject-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+/* Menú Lateral (Sidebar) */
+.sidebar-nav {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  height: fit-content;
+}
+
+.sidebar-nav h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.sidebar-menu a:hover {
+  background-color: #F1F5F9;
+  color: var(--primary-color);
+}
+
+/* Cuerpo de Contenido de la Asignatura */
+.content-body {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+/* Caja Destacada: Objetivo y Carrera */
+.subject-meta-box {
+  background-color: #F1F5F9;
+  border-left: 4px solid var(--primary-color);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.subject-objective {
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.subject-objective strong {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+.subject-degree {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.subject-degree i {
+  color: var(--accent-gold);
+}
+
+/* Títulos de Unidades y Tarjetas Internas */
+.section-title {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--green-eco);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.info-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-light);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-eco);
+}
+
+.info-card h4 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-card h4 i {
+  color: var(--green-eco);
+}
+
+/* Lista de Recursos descargables */
+.resource-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.resource-list li {
+  margin-bottom: 0.8rem;
+}
+
+.resource-list a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.resource-list a:hover {
+  color: var(--green-eco);
+}
+
+/* ==========================================================================
+   7. FOOTER INSTITUCIONAL
+   ========================================================================== */
 .footer {
+  margin-top: auto;
   background-color: #0F172A;
   color: #94A3B8;
   padding-top: 3rem;
@@ -353,14 +605,125 @@ body {
 }
 
 .credits {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   color: var(--accent-gold);
   font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-note p {
+  font-size: 0.85rem;
+  max-width: 400px;
 }
 
 .footer-bottom {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.2rem;
   border-top: 1px solid #1E293B;
   font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   8. ADAPTABILIDAD RESPONSIVA (MÓVILES Y TABLETS)
+   ========================================================================== */
+@media (max-width: 850px) {
+  .subject-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .subject-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subject-nav {
+    justify-content: center;
+  }
+}
+
+/* Nombre de la carrera en texto pequeño debajo de la descripción de la tarjeta */
+.card-degree {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-top: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.card-degree i {
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+}
+
+/* --- VISOR DE PDF EN ASIGNATURAS --- */
+.pdf-container {
+  margin-top: 1.5rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pdf-header h4 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pdf-header h4 i {
+  color: #E11D48; /* Color rojo ícono PDF */
+}
+
+.pdf-viewer-wrapper {
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  background: #FFFFFF;
+}
+
+.pdf-viewer-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.pdf-fallback {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .pdf-viewer-wrapper {
+    height: 400px;
+  }
 }

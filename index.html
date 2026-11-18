@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Proyecto de Apoyo a la Docencia: Sostenibilidad - Perspectivas multidisciplinarias para la solución de problemas socioambientales.">
+  <meta name="description" content="Proyecto de Apoyo a la Docencia: Sostenibilidad - Perspectivas multidisciplinarias para la solucion de problemas socioambientales.">
   <title>Sostenibilidad: Perspectivas Multidisciplinarias | UNAM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Estilos nuevos SOLO para el buscador y las flechas. Reutilizan tus variables. -->
+  <!-- Estilos para el buscador, las flechas y enlaces de tarjetas -->
   <style>
     .subject-toolbar {
       display: flex;
@@ -97,6 +97,26 @@
       color: #94A3B8;
       padding: 2rem 0;
     }
+    
+    /* Ajustes visuales para enlaces en tarjetas */
+    a.roadmap-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      cursor: pointer;
+    }
+    a.roadmap-card:hover {
+      border-color: var(--green-eco);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+    }
+    .roadmap-card.disabled {
+      cursor: default;
+    }
+    .roadmap-card.disabled:hover {
+      transform: none;
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
   </style>
 </head>
 <body>
@@ -157,7 +177,7 @@
         </div>
       </div>
 
-      <!-- Título del tema actual (o "Resultados de búsqueda") -->
+      <!-- Título del tema actual -->
       <h3 id="currentThemeTitle" class="theme-title">Finanzas y Modelos de Negocio</h3>
 
       <!-- Grid de tarjetas -->
@@ -178,42 +198,112 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; UNAM. Todos los derechos reservados.</p>
+      <p>© UNAM. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- Lógica de búsqueda + navegación por flechas -->
+  <!-- Lógica de búsqueda + navegación por flechas + redirección -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const themes = [
         {
           name: "Finanzas y Modelos de Negocio",
           subjects: [
-            { title: "Plan de Negocios Sostenible", desc: "Estructuración de modelos de negocio con impacto socioambiental positivo.", icon: "fa-chart-line", status: "active" },
-            { title: "Contabilidad Básica", desc: "Fundamentos financieros para la gestión de recursos en proyectos sustentables.", icon: "fa-calculator", status: "active" },
-            { title: "Microeconomía", desc: "Análisis del comportamiento de agentes individuales y asignación de recursos.", icon: "fa-chart-pie", status: "soon" },
-            { title: "Macroeconomía", desc: "Estudio de agregados económicos globales y políticas públicas socioambientales.", icon: "fa-landmark", status: "soon" }
+            { 
+              title: "Plan de Negocios Sostenible", 
+              desc: "Estructuración de modelos de negocio con impacto socioambiental positivo.", 
+              degree: "Licenciatura en Contaduria — UNAM",
+              icon: "fa-chart-line", 
+              status: "active", 
+              url: "./Plan_Negocios.html" 
+            },
+            { 
+              title: "Contabilidad Básica", 
+              desc: "Fundamentos financieros para la gestión de recursos en proyectos sustentables.", 
+              degree: "Licenciatura en Contaduria — UNAM",
+              icon: "fa-calculator", 
+              status: "active", 
+              url: "./Contabilidad_Basica.html" 
+            },
+            { 
+              title: "Microeconomía", 
+              desc: "Análisis del comportamiento de agentes individuales y asignación de recursos.", 
+              degree: "Licenciatura en Administracion — UNAM",
+              icon: "fa-chart-pie", 
+              status: "active", 
+              url: "./Microeconomia.html" 
+            },
+            { 
+              title: "Macroeconomía", 
+              desc: "Estudio de agregados económicos globales y políticas públicas socioambientales.", 
+              degree: "Licenciatura en Administracion — UNAM",
+              icon: "fa-landmark", 
+              status: "active", 
+              url: "./Macroeconomia.html" 
+            }
           ]
         },
         {
           name: "Análisis Económico",
           subjects: [
-            { title: "Economía General", desc: "Principios económicos esenciales y su relación con el entorno social.", icon: "fa-globe", status: "active" },
-            { title: "Análisis Socioeconómico de México", desc: "Evaluación del desarrollo histórico y estructural de la economía nacional.", icon: "fa-map-location-dot", status: "soon" },
-            { title: "Economía y Globalización", desc: "Mercados internacionales y sus impactos en el equilibrio ambiental local.", icon: "fa-earth-americas", status: "soon" }
+            { 
+              title: "Economía General", 
+              desc: "Principios económicos esenciales y su relación con el entorno social.", 
+              degree: "Licenciatura en Informática — UNAM",
+              icon: "fa-globe", 
+              status: "active", 
+              url: "./Economia_General.html" 
+            },
+            { 
+              title: "Análisis Socioeconómico de México", 
+              desc: "Evaluación del desarrollo histórico y estructural de la economía nacional.", 
+              degree: "Licenciatura en Informática — UNAM",
+              icon: "fa-map-location-dot", 
+              status: "soon", 
+              url: "#" 
+            },
+            { 
+              title: "Economía y Globalización", 
+              desc: "Mercados internacionales y sus impactos en el equilibrio ambiental local.", 
+              degree: "Licenciatura en Informática — UNAM",
+              icon: "fa-earth-americas", 
+              status: "soon", 
+              url: "#" 
+            }
           ]
         },
         {
           name: "Desarrollo Sostenible",
           subjects: [
-            { title: "Introducción al Desarrollo Sostenible", desc: "Marco conceptual de los ODS y sustentabilidad multidisciplinaria.", icon: "fa-leaf", status: "priority" }
+            { 
+              title: "Introducción al Desarrollo Sostenible", 
+              desc: "Marco conceptual de los ODS y sustentabilidad multidisciplinaria.", 
+              degree: "Licenciatura en DCV — UNAM",
+              icon: "fa-leaf", 
+              status: "active", 
+              url: "./Desarrollo_Sostenible.html" 
+            }
           ]
         },
         {
           name: "Comunicación y Sociedad",
           subjects: [
-            { title: "Análisis de Textos Administrativos", desc: "Comprensión crítica e interpretación de documentación técnica y directiva.", icon: "fa-file-signature", status: "active" },
-            { title: "Imagen y Sociedad", desc: "Comunicación estratégica y responsabilidad social corporativa.", icon: "fa-users", status: "active" }
+            { 
+              title: "Análisis de Textos Administrativos", 
+              desc: "Comprensión crítica e interpretación de documentación técnica y directiva.", 
+              degree: "Licenciatura en Informática — UNAM",
+              icon: "fa-file-signature", 
+              status: "active", 
+              url: "./Textos_Administrativos.html" 
+            },
+            { 
+              title: "Imagen y Sociedad", 
+              desc: "Comunicación estratégica y responsabilidad social corporativa.", 
+              degree: "Licenciatura en Informática — UNAM",
+              icon: "fa-users", 
+              status: "active", 
+              url: "./Imagen_Sociedad.html" 
+            }
           ]
         }
       ];
@@ -246,19 +336,34 @@
         );
       };
 
+      // Función para generar el HTML de cada tarjeta (con la carrera 'degree' incluida)
       const cardHTML = (s) => {
         const isPriority = s.status === 'priority';
         const isActive = s.status === 'active';
         const badgeClass = (isPriority || isActive) ? 'active' : '';
         const badgeText = isPriority ? 'Prioridad 1' : (isActive ? 'Disponible' : 'Próximamente');
-        return `
-          <div class="roadmap-card ${isPriority ? 'highlight' : ''}">
-            <span class="status-badge ${badgeClass}">${badgeText}</span>
-            <i class="fa-solid ${s.icon} card-icon"></i>
-            <h3>${s.title}</h3>
-            <p>${s.desc}</p>
-          </div>
+        
+        const content = `
+          <span class="status-badge ${badgeClass}">${badgeText}</span>
+          <i class="fa-solid ${s.icon} card-icon"></i>
+          <h3>${s.title}</h3>
+          <p class="card-desc">${s.desc}</p>
+          <span class="card-degree"><i class="fa-solid fa-graduation-cap"></i> ${s.degree}</span>
         `;
+
+        if (isActive) {
+          return `
+            <a href="${s.url}" class="roadmap-card ${isPriority ? 'highlight' : ''}">
+              ${content}
+            </a>
+          `;
+        } else {
+          return `
+            <div class="roadmap-card disabled ${isPriority ? 'highlight' : ''}">
+              ${content}
+            </div>
+          `;
+        }
       };
 
       const render = () => {

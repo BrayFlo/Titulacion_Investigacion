@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contabilidad Básica | UNAM Sostenibilidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo-container">
+      <span class="unam-badge">UNAM</span>
+      <div class="logo-text">
+        <span class="title">Sostenibilidad</span>
+        <span class="subtitle">Licenciatura en Informática</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Plan_Negocios.html">Plan de Negocios</a></li>
+        <li><a href="Contabilidad_Basica.html" class="active">Contabilidad</a></li>
+        <li><a href="Textos_Administrativos.html">Textos Admin.</a></li>
+        <li><a href="Economia_General.html">Economía</a></li>
+        <li><a href="Imagen_Sociedad.html">Imagen y Sociedad</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="subject-hero">
+    <span class="badge">Núcleo Temático</span>
+    <h1>Contabilidad Básica</h1>
+    <p>Principios contables y gestión financiera con perspectiva socioambiental y sustentable.</p>
+  </section>
+
+  <main class="container subject-layout">
+    <aside class="sidebar-nav">
+      <h3>Unidades de Aprendizaje</h3>
+      <ul class="sidebar-menu">
+        <li><a href="#objetivo">Objetivo y Carrera</a></li>
+        <li><a href="#plan-estudios">Plan de Estudios (PDF)</a></li>
+        <li><a href="#unidad1">1. Registro de Operaciones</a></li>
+        <li><a href="#recursos">Recursos Didácticos</a></li>
+      </ul>
+    </aside>
+
+    <section class="content-body">
+      <!-- Caja de Objetivo y Carrera -->
+      <div id="objetivo" class="subject-meta-box">
+        <p class="subject-objective">
+          <strong>Objetivo General:</strong> Comprender la técnica contable para el registro de operaciones de las organizaciones, analizando los estados financieros básicos e introduciendo elementos de contabilidad ambiental.
+        </p>
+        <span class="subject-degree">
+          <i class="fa-solid fa-graduation-cap"></i> Licenciatura en Informática — UNAM
+        </span>
+      </div>
+
+      <!-- VISOR DE PLAN DE ESTUDIOS (PDF) --> <!--Falta poner plan de estudios de la materia-->
+      <div id="plan-estudios" class="pdf-container">
+        <div class="pdf-header">
+          <h4><i class="fa-solid fa-file-pdf"></i> Plan de Estudios Oficial de la Asignatura</h4>
+          <a href="./docs-PDF/" download="plan_de_estudios_contabilidad_basica.pdf" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <i class="fa-solid fa-download"></i> Descargar PDF
+          </a>
+        </div>
+        
+        <div class="pdf-viewer-wrapper">
+          <iframe src="docs-PDF/plan_de_estudios_contabilidad_basica.pdf" type="application/pdf" title="Plan de Estudios - Contabilidad Básica">
+            <div class="pdf-fallback">
+              <p>Tu navegador no soporta la visualización previa de archivos PDF integrados.</p>
+              <a href="docs-PDF/plan_de_estudios_contabilidad_basica.pdf" download class="btn btn-primary">Haz clic aquí para descargar el PDF</a>
+            </div>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Contenidos Temáticos -->
+      <h2 id="unidad1" class="section-title" style="margin-top: 2.5rem;">1. Fundamentos Contables</h2>
+      <p>Módulo asignado para el registro sistemático de transacciones y la interpretación del capital organizacional.</p>
+
+      <div class="card-grid">
+        <div class="info-card">
+          <h4><i class="fa-solid fa-calculator"></i> Balance General</h4>
+          <p>Estructura de activos, pasivos y patrimonio en la gestión institucional.</p>
+        </div>
+        <div class="info-card">
+          <h4><i class="fa-solid fa-leaf"></i> Cuentas Ambientales</h4>
+          <p>Integración de costos y pasivos ambientales dentro de los estados financieros.</p>
+        </div>
+      </div>
+
+      <h2 id="recursos" class="section-title" style="margin-top: 2.5rem;">Recursos Educativos</h2>
+      <ul class="resource-list">
+        <li><a href="#"><i class="fa-solid fa-file-pdf"></i> Guía Práctica de Asientos Contables (.PDF)</a></li>
+        <li><a href="#"><i class="fa-solid fa-table"></i> Libro Diario y Mayor (.XLSX)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h3>Universidad Nacional Autónoma de México</h3>
+        <p>Proyecto de Titulación — Licenciatura en Informática</p>
+        <p class="credits"><i class="fa-solid fa-code"></i> Proyecto de Apoyo a la Docencia UNAM.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p> UNAM. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

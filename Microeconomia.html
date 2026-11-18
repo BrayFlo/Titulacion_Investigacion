@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microeconomía | UNAM Sostenibilidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo-container">
+      <span class="unam-badge">UNAM</span>
+      <div class="logo-text">
+        <span class="title">Sostenibilidad</span>
+        <span class="subtitle">Licenciatura en Informática</span>
+      </div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Plan_Negocios.html">Plan de Negocios</a></li>
+        <li><a href="Contabilidad_Basica.html">Contabilidad</a></li>
+        <li><a href="Microeconomia.html" class="active">Microeconomía</a></li>
+        <li><a href="Economia_General.html">Economía</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="subject-hero">
+    <span class="badge">Fase de Escalabilidad</span>
+    <h1>Microeconomía</h1>
+    <p>Análisis del comportamiento de agentes individuales, mercados y asignación eficiente de recursos socioambientales.</p>
+  </section>
+
+  <main class="container subject-layout">
+    <aside class="sidebar-nav">
+      <h3>Unidades de Aprendizaje</h3>
+      <ul class="sidebar-menu">
+        <li><a href="#objetivo">Objetivo y Carrera</a></li>
+        <li><a href="#plan-estudios">Plan de Estudios (PDF)</a></li>
+        <li><a href="#unidad1">1. Teoría del Consumidor</a></li>
+        <li><a href="#recursos">Recursos Didácticos</a></li>
+      </ul>
+    </aside>
+
+    <section class="content-body">
+      <!-- Caja de Objetivo y Carrera -->
+      <div id="objetivo" class="subject-meta-box">
+        <p class="subject-objective">
+          <strong>Objetivo General:</strong> Analizar la conducta del consumidor y de la empresa en la toma de decisiones individuales, así como el funcionamiento del mercado y sus externalidades socioambientales.
+        </p>
+        <span class="subject-degree">
+          <i class="fa-solid fa-graduation-cap"></i> Licenciatura en Informática — UNAM
+        </span>
+      </div>
+
+      <!-- VISOR DE PLAN DE ESTUDIOS (PDF) -->
+      <div id="plan-estudios" class="pdf-container">
+        <div class="pdf-header">
+          <h4><i class="fa-solid fa-file-pdf"></i> Plan de Estudios Oficial de la Asignatura</h4>
+          <!-- Botón de descarga local -->
+          <a href="./docs-PDF/1532_microeconomia.pdf" download="microeconomia.pdf" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <i class="fa-solid fa-download"></i> Descargar PDF
+          </a>
+        </div>
+        
+        <div class="pdf-viewer-wrapper">
+          <!-- Objeto principal para servidores locales / producción -->
+          <object data="./docs-PDF/1532_microeconomia.pdf" type="application/pdf" width="100%" height="100%">
+            <!-- iframe alternativo directo -->
+            <iframe src="./docs-PDF/1532_microeconomia.pdf" title="Plan de Estudios - Microeconomía">
+              <div class="pdf-fallback">
+                <p>Tu navegador no permite la visualización previa local del archivo PDF.</p>
+                <a href="./docs-PDF/1532_microeconomia.pdf" download="microeconomia.pdf" class="btn btn-primary">
+                  <i class="fa-solid fa-download"></i> Clic aquí para descargar el PDF
+                </a>
+              </div>
+            </iframe>
+          </object>
+        </div>
+      </div>
+
+      <!-- Contenidos Temáticos -->
+      <h2 id="unidad1" class="section-title" style="margin-top: 2.5rem;">1. Estructura de Mercado y Externalidades</h2>
+      <p>Estudio de los mecanismos de oferta, demanda y fallos de mercado asociados a la contaminación ambiental.</p>
+
+      <div class="card-grid">
+        <div class="info-card">
+          <h4><i class="fa-solid fa-chart-pie"></i> Oferta y Demanda</h4>
+          <p>Equilibrio de mercado y elasticidad en bienes y servicios sostenibles.</p>
+        </div>
+        <div class="info-card">
+          <h4><i class="fa-solid fa-smog"></i> Externalidades Negativas</h4>
+          <p>Efectos indirectos de la producción sobre el medio ambiente y políticas de regulación.</p>
+        </div>
+      </div>
+
+      <h2 id="recursos" class="section-title" style="margin-top: 2.5rem;">Recursos Educativos</h2>
+      <ul class="resource-list">
+        <li><a href="#"><i class="fa-solid fa-file-pdf"></i> Antología de Microeconomía y Medio Ambiente (.PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h3>Universidad Nacional Autónoma de México</h3>
+        <p>Proyecto de Titulación — Licenciatura en Informática</p>
+        <p class="credits"><i class="fa-solid fa-code"></i> Proyecto de Apoyo a la Docencia UNAM.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p> UNAM. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
