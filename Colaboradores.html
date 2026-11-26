@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créditos y Colaboradores | UNAM Sostenibilidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar (con el menú lateral responsive) -->
+  <header class="navbar">
+    <a href="index.html" class="logo-container">
+      <span class="unam-badge">UNAM</span>
+      <div class="logo-text">
+        <span class="title">Sostenibilidad</span>
+        <span class="subtitle">Licenciatura en Informática</span>
+      </div>
+    </a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-close-row">
+          <button class="nav-close" id="navClose" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </li>
+    
+        <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#proyeccion">Asignaturas</a></li>
+      <li><a href="index.html#eventos">Eventos</a></li>
+      <li><a href="index.html#acerca">Créditos</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- Hero -->
+  <section class="subject-hero">
+    <span class="badge">Equipo de Trabajo</span>
+    <h1>Créditos y Colaboradores</h1>
+    <p>Conoce al equipo multidisciplinario detrás del desarrollo de este Espacio Digital Universitario de Ciencias Sociales (EDUCS).</p>
+  </section>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    
+    <!-- Sección: Cuerpo Académico y Docentes -->
+    <h2 class="section-title" style="margin-top: 1rem;">Docentes e Investigadores</h2>
+    <p style="margin-bottom: 2rem; color: var(--text-muted);">Creadores del material didáctico digital y asesores del proyecto.</p>
+
+    <div class="collaborators-grid">
+      <!-- Dr. Aldo -->
+      <div class="collaborator-card">
+        <div class="collab-img-wrapper">
+          <!-- Si tienes foto, reemplaza el div de abajo por: <img src="./imagenes/aldo.jpg" alt="Dr. Aldo" class="collab-img"> -->
+          <div class="collab-placeholder"><i class="fa-solid fa-user-tie"></i></div>
+        </div>
+        <h3>Dr. Aldo Vigueras García</h3>
+        <span class="collab-role">Profesor de Carrera Titular "A"</span>
+        <p class="collab-desc">FES Cuautitlán. Creador de material didáctico digital.</p>
+      </div>
+
+      <!-- Dra. Nadia -->
+      <div class="collaborator-card">
+        <div class="collab-img-wrapper">
+          <img src="./imagenes/colaboradores/nadia.jpg" alt="Dra. Nadia Viridiana" class="collab-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="collab-placeholder" style="display: none;"><i class="fa-solid fa-user-tie"></i></div>
+        </div>
+        <h3>Dra. Nadia Viridiana</h3>
+        <span class="collab-role">Profesora de Carrera Asociada C</span>
+        <p class="collab-desc">FES Cuautitlán. Creadora de material didáctico digital.</p>
+      </div>
+
+      <!-- Dra. Ana Erika -->
+      <div class="collaborator-card">
+        <div class="collab-img-wrapper">
+          <img src="./imagenes/colaboradores/erika.jpg" alt="Dra. Ana Erika Castañeda" class="collab-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="collab-placeholder" style="display: none;"><i class="fa-solid fa-user-tie"></i></div>
+        </div>
+        <h3>Dra. Ana Erika Castañeda Martínez</h3>
+        <span class="collab-role">Profesora de Carrera Asociada C</span>
+        <p class="collab-desc">FES Cuautitlán. Creadora de material didáctico digital.</p>
+      </div>
+      
+      <!-- Leonardo -->
+      <div class="collaborator-card">
+        <div class="collab-img-wrapper">
+          <div class="collab-placeholder"><i class="fa-solid fa-chalkboard-user"></i></div>
+        </div>
+        <h3>Leonardo Hernández Carmona</h3>
+        <span class="collab-role">Profesor de Asignatura</span>
+        <p class="collab-desc">Licenciatura en Informática. Diseño y desarrollo del sitio web.</p>
+      </div>
+    </div>
+
+    <!-- Sección: Alumnos y Egresados -->
+    <h2 class="section-title" style="margin-top: 3rem;">Desarrollo y Diseño Web</h2>
+    <p style="margin-bottom: 2rem; color: var(--text-muted);">Estudiantes y egresados encargados de la arquitectura, diseño y creación del material.</p>
+
+    <div class="collaborators-grid">
+      <!-- Brenda -->
+      <div class="collaborator-card">
+        <div class="collab-img-wrapper">
+          <div class="collab-placeholder"><i class="fa-solid fa-user-graduate"></i></div>
+        </div>
+        <h3>Brenda [Apellido]</h3>
+        <span class="collab-role">Egresada de Informática</span>
+        <p class="collab-desc">FES Cuautitlán. Diseño y desarrollo del sitio web.</p>
+      </div>
+
+      <!-- Bryan -->
+      <div class="collaborator-card">
+        <div class="collab-img-wrapper">
+          <div class="collab-placeholder"><i class="fa-solid fa-user-graduate"></i></div>
+        </div>
+        <h3>Bryan [Apellido]</h3>
+        <span class="collab-role">Egresado de Informática</span>
+        <p class="collab-desc">FES Cuautitlán. Diseño y desarrollo del sitio web.</p>
+      </div>
+
+      <!-- Juan Luis -->
+      <div class="collaborator-card">
+        <div class="collab-img-wrapper">
+          <div class="collab-placeholder"><i class="fa-solid fa-user-graduate"></i></div>
+        </div>
+        <h3>Juan Luis González Martínez</h3>
+        <span class="collab-role">Estudiante de Contaduría</span>
+        <p class="collab-desc">FES Cuautitlán. Creador de material didáctico digital.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h3>Universidad Nacional Autónoma de México</h3>
+        <p>Proyecto de Titulación — Licenciatura en Informática</p>
+        <p class="credits"><i class="fa-solid fa-code"></i> Desarrollado por dos alumnos de Lic. en Informática para apoyo a la docencia.</p>
+      </div>
+      <div class="footer-note">
+        <p>Diseñado bajo arquitectura modular para su fácil actualización por futuras generaciones de la licenciatura.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© UNAM. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script del Menú Lateral -->
+  <script src="nav.js"></script>
+</body>
+</html>

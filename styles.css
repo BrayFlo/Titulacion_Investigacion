@@ -1147,3 +1147,90 @@ body.nav-open { overflow: hidden; }
   .event-date .month { font-size: 0.62rem; }
   .filter-btn { font-size: 0.8rem; padding: 0.45rem 0.9rem; }
 }
+/* ==========================================================================
+12. SECCIÓN DE COLABORADORES (Créditos)
+   ========================================================================== */
+.collaborators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.collaborator-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.collaborator-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-eco);
+}
+
+.collab-img-wrapper {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--bg-light);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  background: var(--primary-color);
+}
+
+.collab-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder elegante para quienes no tienen foto */
+.collab-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--green-dark) 100%);
+  color: var(--accent-gold);
+  font-size: 2.5rem;
+}
+
+.collaborator-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--primary-color);
+  margin-bottom: 0.2rem;
+}
+
+.collab-role {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--green-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+}
+
+.collab-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .collaborators-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .collaborator-card {
+    padding: 1.5rem 1rem;
+  }
+}
