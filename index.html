@@ -190,6 +190,29 @@
     </div>
   </section>
 
+    <!-- ============================================================ -->
+  <!-- EVENTOS Y ACTIVIDADES                                        -->
+  <!-- ============================================================ -->
+  <section id="eventos" class="events-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Eventos y Actividades</h2>
+        <p>Consulta los eventos vigentes y próximos del núcleo temático</p>
+      </div>
+
+      <!-- Filtros por estado -->
+      <div class="events-filters" role="tablist" aria-label="Filtrar eventos">
+        <button class="filter-btn active" data-filter="all"  role="tab" aria-selected="true">Todos</button>
+        <button class="filter-btn" data-filter="next" role="tab" aria-selected="false">Próximos</button>
+        <button class="filter-btn" data-filter="live" role="tab" aria-selected="false">En Curso</button>
+        <button class="filter-btn" data-filter="done" role="tab" aria-selected="false">Finalizados</button>
+      </div>
+
+      <!-- Grid dinámico -->
+      <div class="events-grid" id="eventsGrid"></div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer id="acerca" class="footer">
     <div class="container footer-content">
@@ -425,5 +448,111 @@
       render();
     });
   </script>
+
+  <script>
+  /* ============================================================
+     CATÁLOGO DE EVENTOS — datos editables
+     ============================================================ */
+  document.addEventListener('DOMContentLoaded', () => {
+    const events = [
+      {
+        day: '12', month: 'Dic',
+        title: 'Congreso de Sostenibilidad Digital',
+        desc: 'Encuentro multidisciplinario sobre tecnología, ODS y transformación socioambiental.',
+        time: '09:00 – 18:00 hrs',
+        place: 'Auditorio FESC',
+        mode: 'Presencial',
+        status: 'next'   // next | live | done
+      },
+      {
+        day: '20', month: 'Ene',
+        title: 'Taller: Economía Circular Aplicada',
+        desc: 'Metodologías prácticas para rediseñar procesos productivos con enfoque de residuo cero.',
+        time: '10:00 – 14:00 hrs',
+        place: 'Sala de Cómputo B-204',
+        mode: 'Híbrido',
+        status: 'next'
+      },
+      {
+        day: '02', month: 'Dic',
+        title: 'Exposición Virtual: ODS en la UNAM',
+        desc: 'Muestra interactiva de proyectos estudiantiles alineados con la Agenda 2030.',
+        time: 'Acceso 24/7',
+        place: 'Plataforma EDUCS',
+        mode: 'En línea',
+        status: 'live'
+      },
+      {
+        day: '05', month: 'Nov',
+        title: 'Seminario: Finanzas Sustentables',
+        desc: 'Panel de expertos sobre inversión ESG y contabilidad ambiental en México.',
+        time: '16:00 – 19:00 hrs',
+        place: 'Auditorio de Posgrado',
+        mode: 'Presencial',
+        status: 'done'
+      }
+    ];
+
+    const statusLabels = {
+      next: { text: 'Próximo',  cls: 'next' },
+      live: { text: 'En curso', cls: 'live' },
+      done: { text: 'Finalizado', cls: 'done' }
+    };
+
+    const grid = document.getElementById('eventsGrid');
+    if (!grid) return;
+
+    const renderEvents = (filter = 'all') => {
+      const list = filter === 'all'
+        ? events
+        : events.filter(e => e.status === filter);
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div class="events-empty">
+            <i class="fa-regular fa-calendar-xmark"></i>
+            <p>No hay eventos en esta categoría por el momento.</p>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = list.map(ev => {
+        const s = statusLabels[ev.status];
+        return `
+          <article class="event-card status-${s.cls}">
+            <div class="event-date">
+              <span class="day">${ev.day}</span>
+              <span class="month">${ev.month}</span>
+            </div>
+            <div class="event-info">
+              <span class="event-status ${s.cls}">${s.text}</span>
+              <h3 class="event-title">${ev.title}</h3>
+              <p class="event-desc">${ev.desc}</p>
+              <div class="event-meta">
+                <span><i class="fa-regular fa-clock"></i>${ev.time}</span>
+                <span><i class="fa-solid fa-location-dot"></i>${ev.place}</span>
+                <span><i class="fa-solid fa-video"></i>${ev.mode}</span>
+              </div>
+            </div>
+          </article>`;
+      }).join('');
+    };
+
+    /* Filtros */
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        renderEvents(btn.dataset.filter);
+      });
+    });
+
+    renderEvents('all');
+  });
+</script>
 </body>
 </html>
