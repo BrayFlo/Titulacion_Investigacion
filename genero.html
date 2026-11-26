@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Género, Igualdad y Cultura de Paz | UNAM Sostenibilidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="logo-container">
+      <span class="unam-badge">UNAM</span>
+      <div class="logo-text">
+        <span class="title">Sostenibilidad</span>
+        <span class="subtitle">Licenciatura en Informática</span>
+      </div>
+    </a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-close-row">
+          <button class="nav-close" id="navClose" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Plan_Negocios.html">Plan de Negocios</a></li>
+        <li><a href="Contabilidad_Basica.html">Contabilidad</a></li>
+        <li><a href="Genero_Cultura_Paz.html" class="active">Género y Paz</a></li>
+        <li><a href="Economia_General.html">Economía</a></li>
+        <li><a href="Imagen_Sociedad.html">Imagen y Sociedad</a></li>
+        <li><a href="Colaboradores.html">Colaboradores</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+  <!-- Hero de la Asignatura -->
+  <section class="subject-hero">
+    <span class="badge">Asignatura Obligatoria</span>
+    <h1>Género, Igualdad y Cultura de Paz</h1>
+    <p>Reflexión y análisis de las causas estructurales que perpetúan la violencia de género para contribuir a su prevención y erradicación.</p>
+  </section>
+
+  <!-- Estructura Principal -->
+  <main class="container subject-layout">
+    <aside class="sidebar-nav">
+      <h3>Unidades de Aprendizaje</h3>
+      <ul class="sidebar-menu">
+        <li><a href="#objetivo">Objetivo y Carrera</a></li>
+        <li><a href="#plan-estudios">Plan de Estudios (PDF)</a></li>
+        <li><a href="#unidad1">1. Desigualdad de Género</a></li>
+        <li><a href="#unidad2">2. Feminismos y Violencia</a></li>
+        <li><a href="#unidad3">3. Igualdad y Cultura de Paz</a></li>
+        <li><a href="#recursos">Recursos Didácticos</a></li>
+      </ul>
+    </aside>
+
+    <section class="content-body">
+      <!-- Caja de Objetivo y Carrera -->
+      <div id="objetivo" class="subject-meta-box">
+        <p class="subject-objective">
+          <strong>Objetivo General:</strong> Promover la igualdad sustantiva a través de la reflexión y análisis de las causas estructurales que perpetúan la violencia de género en la sociedad, para que el alumnado contribuya, desde cualquier contexto social y dentro del marco de una cultura de paz, en la prevención y erradicación de todo tipo de discriminación o violencia por razones de género.
+        </p>
+        <span class="subject-degree">
+          <i class="fa-solid fa-graduation-cap"></i> Impartida en Todas las Licenciaturas — FES Cuautitlán
+        </span>
+      </div>
+
+      <!-- VISOR DE PLAN DE ESTUDIOS (PDF) -->
+      <div id="plan-estudios" class="pdf-container">
+        <div class="pdf-header">
+          <h4><i class="fa-solid fa-file-pdf"></i> Plan de Estudios Oficial de la Asignatura</h4>
+          <a href="./docs-PDF/Genero.pdf" download="Genero_Cultura_Paz.pdf" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+            <i class="fa-solid fa-download"></i> Descargar PDF
+          </a>
+        </div>
+        
+        <div class="pdf-viewer-wrapper">
+          <iframe src="./docs-PDF/Genero.pdf" type="application/pdf" title="Plan de Estudios - Género, Igualdad y Cultura de Paz">
+            <div class="pdf-fallback">
+              <p>Tu navegador no soporta la visualización previa de archivos PDF integrados.</p>
+              <a href="./docs-PDF/Genero.pdf" download class="btn btn-primary">Haz clic aquí para descargar el PDF</a>
+            </div>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Contenidos Temáticos -->
+      <h2 id="unidad1" class="section-title" style="margin-top: 2.5rem;">1. La desigualdad de género y su contexto</h2>
+      <p>Análisis de los sistemas estructurales que originan y mantienen las brechas de género en la sociedad.</p>
+
+      <div class="card-grid">
+        <div class="info-card">
+          <h4><i class="fa-solid fa-venus-mars"></i> Sistema Sexo-Género</h4>
+          <p>Roles, estereotipos, mandatos e imaginarios colectivos sobre masculinidades y feminidades.</p>
+        </div>
+        <div class="info-card">
+          <h4><i class="fa-solid fa-building-shield"></i> Capitalismo y Patriarcado</h4>
+          <p>Relación entre el sistema económico y la heteronormatividad en la reproducción de desigualdades.</p>
+        </div>
+      </div>
+
+      <h2 id="unidad2" class="section-title" style="margin-top: 2.5rem;">2. Feminismos y violencia de género</h2>
+      <p>Estudio de las corrientes feministas y su impacto en la visibilización y atención de la violencia estructural.</p>
+
+      <div class="card-grid">
+        <div class="info-card">
+          <h4><i class="fa-solid fa-fist-raised"></i> Corrientes Feministas</h4>
+          <p>Principales aportaciones teóricas y movimientos sociales por la igualdad de derechos.</p>
+        </div>
+        <div class="info-card">
+          <h4><i class="fa-solid fa-triangle-exclamation"></i> Violencia Estructural</h4>
+          <p>Desigualdades sexo-genéricas en el espacio público y privado, y normativas para su atención.</p>
+        </div>
+      </div>
+
+      <h2 id="unidad3" class="section-title" style="margin-top: 2.5rem;">3. Igualdad y cultura de paz</h2>
+      <p>Construcción de entornos seguros a través de la ética del cuidado y el lenguaje incluyente.</p>
+
+      <div class="card-grid">
+        <div class="info-card">
+          <h4><i class="fa-solid fa-dove"></i> Cultura de Paz</h4>
+          <p>Fortalecimiento de la ética del cuidado y el reconocimiento de la otredad en comunidad.</p>
+        </div>
+        <div class="info-card">
+          <h4><i class="fa-solid fa-hands-holding-child"></i> Nuevas Masculinidades</h4>
+          <p>Corresponsabilidad, sororidad y fomento del lenguaje incluyente en el ámbito universitario.</p>
+        </div>
+      </div>
+
+      <!-- Recursos Didácticos -->
+      <h2 id="recursos" class="section-title" style="margin-top: 2.5rem;">Recursos Educativos</h2>
+      <ul class="resource-list">
+        <li><a href="#"><i class="fa-solid fa-file-pdf"></i> Guía: Lenguaje Incluyente y Comunicación No Sexista (.PDF)</a></li>
+        <li><a href="#"><i class="fa-solid fa-link"></i> Herramientas para una docencia igualitaria (CIGU-UNAM)</a></li>
+        <li><a href="#"><i class="fa-solid fa-file-contract"></i> Ley General de Acceso de las Mujeres a una Vida Libre de Violencia</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h3>Universidad Nacional Autónoma de México</h3>
+        <p>Proyecto de Titulación — Licenciatura en Informática</p>
+        <p class="credits"><i class="fa-solid fa-code"></i> Proyecto de Apoyo a la Docencia UNAM.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© UNAM. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
